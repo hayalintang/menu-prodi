@@ -18,4 +18,12 @@ class Prodi extends Model
     {
         return $this->belongsTo(User::class);
     }
+    public function cpl(): HasOne
+    {
+        return $this->hasOne(Cpl::class);
+    }
+    public function matkul(): HasOne
+    {
+        return $this->hasOne(Matkul::class);
+    }
 }

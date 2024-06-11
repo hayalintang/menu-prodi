@@ -13,6 +13,8 @@
               <x-nav-link href="/about" :active="request()->is('about')">About</x-nav-link>
               <x-nav-link href="/contact" :active="request()->is('contact')">Contact</x-nav-link>
               <x-nav-link href="/prodi" :active="request()->is('prodi')">Prodi</x-nav-link>
+              <x-nav-link href="/cpl" :active="request()->is('cpl')">CPL</x-nav-link>
+              <x-nav-link href="/matkul" :active="request()->is('mk')">Mata Kuliah</x-nav-link>
             </div>
           </div>
         </div>
@@ -72,6 +74,8 @@
         <x-nav-link href="/about" :active="request()->is('about')">About</x-nav-link>
         <x-nav-link href="/contact" :active="request()->is('contact')">Contact</x-nav-link>
         <x-nav-link href="/prodi" :active="request()->is('prodi')">Prodi</x-nav-link>
+        <x-nav-link href="/cpl" :active="request()->is('cpl')">CPL</x-nav-link>
+        <x-nav-link href="/matkul" :active="request()->is('mk')">Mata Kuliah</x-nav-link>
       </div>
       <div class="border-t border-gray-700 pb-3 pt-4">
         <div class="flex items-center px-5">

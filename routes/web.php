@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Cpl;
 use App\Models\Post;
 use App\Models\User;
 use App\Models\Category;
@@ -37,4 +38,14 @@ Route::get('/contact', function () {
 Route::get('/prodi', function () {
     $prodis = \App\Models\Prodi::all();
     return view('prodi', ['title' => 'Program Studi', 'prodis' => $prodis]);
+});
+
+Route::get('/cpl', function () {
+    $cpls = Cpl::all();
+    return view('cpl', ['title' => 'Capaian Pembelajaran Lulusan', 'cpls' => $cpls]);
+});
+
+Route::get('/matkul', function () {
+    $matkuls = \App\Models\Matkul::all();
+    return view('matkul', ['title' => 'Mata Kuliah', 'matkuls' => $matkuls]);
 });
