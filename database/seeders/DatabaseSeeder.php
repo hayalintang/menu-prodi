@@ -19,9 +19,7 @@ class DatabaseSeeder extends Seeder
             CategorySeeder::class,
             PostSeeder::class,
             ProdiSeeder::class,
-            CplSeeder::class,
-            MatkulSeeder::class,
-            CplmkSeeder::class
+            CplSeeder::class
         ]);
     }
 }

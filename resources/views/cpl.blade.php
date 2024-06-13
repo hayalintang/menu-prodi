@@ -7,8 +7,8 @@
         <thead>
             <tr>
                 <x-thead>No</x-thead>
-                <x-thead class="w-40">Kode CPL</x-thead>
                 <x-thead class="w-40">Kode Prodi</x-thead>
+                <x-thead class="w-40">Kode CPL</x-thead>
                 <x-thead>Deskripsi</x-thead>
                 <x-thead class="w-40">Aksi</x-thead>
             </tr>
@@ -17,8 +17,8 @@
         <tbody>
                 <tr>
                     <x-tbody>{{ $cpl->id }}</x-tbody>
-                    <x-tbody class="w-40">{{ $cpl->kode_cpl }}</x-tbody>
                     <x-tbody class="w-40">{{ $cpl->kode_prodi }}</x-tbody>
+                    <x-tbody class="w-40">{{ $cpl->kode_cpl }}</x-tbody>
                     <x-tbody class="text-justify">{{ $cpl->deskripsi }}</x-tbody>
                     <x-tbody class="w-40">
                         <a href="#" class="text-green-500 hover:text-green-700 mx-2">Edit</a>

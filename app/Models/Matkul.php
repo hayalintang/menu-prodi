@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 class Matkul extends Model
 {
     use HasFactory;
+    protected $fillable = ['kode_mk', 'kode_prodi', 'deskripsi'];
     public function kode_prodi(): BelongsTo
     {
         return $this->belongsTo(Prodi::class);

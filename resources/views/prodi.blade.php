@@ -7,8 +7,8 @@
         <thead>
             <tr>
                 <x-thead>No</x-thead>
-                <x-thead>Kode Prodi</x-thead>
                 <x-thead>Nama Prodi</x-thead>
+                <x-thead>Kode Prodi</x-thead>
                 <x-thead>Kaprodi</x-thead>
                 <x-thead>Aksi</x-thead>
             </tr>
@@ -17,8 +17,8 @@
         <tbody>
                 <tr>
                     <x-tbody>{{ $prodi->no }}</x-tbody>
-                    <x-tbody>{{ $prodi->kode_prodi }}</x-tbody>
                     <x-tbody>{{ $prodi->nama_prodi }}</x-tbody>
+                    <x-tbody>{{ $prodi->kode_prodi }}</x-tbody>
                     <x-tbody>{{ $prodi->kaprodi->name }}</x-tbody>
                     <x-tbody>
                         <a href="#" class="text-green-500 hover:text-green-700 mx-2">Edit</a>

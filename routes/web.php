@@ -3,9 +3,12 @@
 use App\Models\Cpl;
 use App\Models\Post;
 use App\Models\User;
+use App\Models\Prodi;
+use App\Models\Matkul;
 use App\Models\Category;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MatkulController;
 
 Route::get('/', function () {
     return view('home', ['title' => 'Home Page']);
@@ -16,7 +19,9 @@ Route::get('/about', function () {
 });
 
 Route::get('/posts', function () {
-    return view('posts', ['title' => 'Blog', 'posts' => Post::all()]);
+    //$posts = Post::with(['author', 'category'])->latest()->get();
+    $posts = Post::all();
+    return view('posts', ['title' => 'Blog', 'posts' => $posts]);
 });
 
 Route::get('/posts/{post:slug}', function (Post $post) {
@@ -24,10 +29,12 @@ Route::get('/posts/{post:slug}', function (Post $post) {
 });
 
 Route::get('/authors/{user:username}', function (User $user) {
+    //$posts = $user->posts->load('category', 'author');
     return view('posts', ['title' => count($user->posts) . ' Articles by ' . $user->name, 'posts' => $user->posts]);
 });
 
 Route::get('/categories/{category:slug}', function (Category $category) {
+    //$posts = $category->posts->load('category', 'author');
     return view('posts', ['title' => count($category->posts) . ' Articles in the ' . $category->name . ' Category', 'posts' => $category->posts]);
 });
 
@@ -36,7 +43,7 @@ Route::get('/contact', function () {
 });
 
 Route::get('/prodi', function () {
-    $prodis = \App\Models\Prodi::all();
+    $prodis = Prodi::all();
     return view('prodi', ['title' => 'Program Studi', 'prodis' => $prodis]);
 });
 
@@ -46,6 +53,10 @@ Route::get('/cpl', function () {
 });
 
 Route::get('/matkul', function () {
-    $matkuls = \App\Models\Matkul::all();
+    $matkuls = Matkul::all();
     return view('matkul', ['title' => 'Mata Kuliah', 'matkuls' => $matkuls]);
 });
+
+Route::get('/matkul', [MatkulController::class, 'index'])->name('matkul.index');
+Route::get('/matkul/create', [MatkulController::class, 'create'])->name('matkul.create');
+Route::post('/matkul/store', [MatkulController::class, 'store'])->name('matkul.store');
