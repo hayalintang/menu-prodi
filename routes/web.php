@@ -8,6 +8,8 @@ use App\Models\Matkul;
 use App\Models\Category;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CplController;
+use App\Http\Controllers\ProdiController;
 use App\Http\Controllers\MatkulController;
 
 Route::get('/', function () {
@@ -42,21 +44,8 @@ Route::get('/contact', function () {
     return view('contact', ['title' => 'Contact Us!']);
 });
 
-Route::get('/prodi', function () {
-    $prodis = Prodi::all();
-    return view('prodi', ['title' => 'Program Studi', 'prodis' => $prodis]);
-});
+Route::resource('prodi', ProdiController::class);
 
-Route::get('/cpl', function () {
-    $cpls = Cpl::all();
-    return view('cpl', ['title' => 'Capaian Pembelajaran Lulusan', 'cpls' => $cpls]);
-});
+Route::resource('cpl', CplController::class);
 
-Route::get('/matkul', function () {
-    $matkuls = Matkul::all();
-    return view('matkul', ['title' => 'Mata Kuliah', 'matkuls' => $matkuls]);
-});
-
-Route::get('/matkul', [MatkulController::class, 'index'])->name('matkul.index');
-Route::get('/matkul/create', [MatkulController::class, 'create'])->name('matkul.create');
-Route::post('/matkul/store', [MatkulController::class, 'store'])->name('matkul.store');
+Route::resource('matkul', MatkulController::class);

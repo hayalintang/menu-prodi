@@ -12,12 +12,12 @@ class CplSeeder extends Seeder
     /**
      * Run the database seeds.
      */
-    public function run(): void
-    {
-        $prodis = Prodi::all();
+    // public function run(): void
+    // {
+    //     $prodis = Prodi::all();
 
-        foreach ($prodis as $prodi) {
-            Cpl::factory()->create(['kode_prodi' => $prodi->kode_prodi]);
-        }
-    }
+    //     foreach ($prodis as $prodi) {
+    //         Cpl::factory()->create(['kode_prodi' => $prodi->kode_prodi]);
+    //     }
+    // }
 }

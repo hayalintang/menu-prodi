@@ -18,8 +18,6 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             CategorySeeder::class,
             PostSeeder::class,
-            ProdiSeeder::class,
-            CplSeeder::class
         ]);
     }
 }

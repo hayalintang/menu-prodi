@@ -16,7 +16,7 @@ class Prodi extends Model
 
     public function kaprodi(): BelongsTo
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'kaprodi_id');
     }
     public function cpl(): HasOne
     {

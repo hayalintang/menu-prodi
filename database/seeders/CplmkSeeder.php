@@ -13,18 +13,18 @@ class CplmkSeeder extends Seeder
     /**
      * Run the database seeds.
      */
-    public function run(): void
-    {
-        $cpls = Cpl::all();
-        $matkuls = Matkul::all();
+    // public function run(): void
+    // {
+    //     $cpls = Cpl::all();
+    //     $matkuls = Matkul::all();
 
-        foreach ($cpls as $cpl) {
-            foreach ($matkuls as $matkul) {
-                Cplmk::factory()->create([
-                    'cpl_id' => $cpl->id,
-                    'matkul_id' => $matkul->id
-                ]);
-            }
-        }
-    }
+    //     foreach ($cpls as $cpl) {
+    //         foreach ($matkuls as $matkul) {
+    //             Cplmk::factory()->create([
+    //                 'cpl_id' => $cpl->id,
+    //                 'matkul_id' => $matkul->id
+    //             ]);
+    //         }
+    //     }
+    // }
 }

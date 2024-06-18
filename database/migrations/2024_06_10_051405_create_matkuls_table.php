@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('matkuls', function (Blueprint $table) {
             $table->id();
-            $table->string('kode_mk')->unique();
             $table->string('kode_prodi');
             $table->foreign('kode_prodi')->references('kode_prodi')->on('prodis')->onDelete('cascade');
+            $table->string('kode_mk')->unique();
             $table->string('deskripsi');
             $table->timestamps();
         });

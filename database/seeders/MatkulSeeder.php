@@ -12,12 +12,12 @@ class MatkulSeeder extends Seeder
     /**
      * Run the database seeds.
      */
-    public function run(): void
-    {
-        $prodis = Prodi::all();
+    //public function run(): void
+    //{
+        //$prodis = Prodi::all();
 
-        foreach ($prodis as $prodi) {
-            Matkul::factory()->create(['kode_prodi' => $prodi->kode_prodi]);
-        }
-    }
+    //     foreach ($prodis as $prodi) {
+    //         Matkul::factory()->create(['kode_prodi' => $prodi->kode_prodi]);
+    //     }
+    // }
 }

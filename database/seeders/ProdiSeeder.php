@@ -14,6 +14,6 @@ class ProdiSeeder extends Seeder
      */
     public function run(): void
     {
-        Prodi::factory(5)->create();
+        //Prodi::factory(5)->create();
     }
 }
